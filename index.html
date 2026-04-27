@@ -23,6 +23,18 @@
             --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);    /* 中阴影 */
             --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.08);   /* 大阴影 */
             
+            /* 夜晚模式变量 */
+            --dark-background-color: #121212;      /* 夜晚背景色 */
+            --dark-card-background: #1e1e1e;       /* 夜晚卡片背景色 */
+            --dark-header-background: #252525;     /* 夜晚头部背景色 */
+            --dark-text-primary: #ffffff;          /* 夜晚主要文本颜色 */
+            --dark-text-secondary: #b0b0b0;        /* 夜晚次要文本颜色 */
+            --dark-text-tertiary: #707070;         /* 夜晚 tertiary 文本颜色 */
+            --dark-border-color: #333333;          /* 夜晚边框颜色 */
+            --dark-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);    /* 夜晚小阴影 */
+            --dark-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.3);    /* 夜晚中阴影 */
+            --dark-shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.2);   /* 夜晚大阴影 */
+            
             /* 间距变量 */
             --spacing-xs: 4px;                 /* 极小间距 */
             --spacing-sm: 8px;                 /* 小间距 */
@@ -66,6 +78,197 @@
             background-color: var(--background-color);
             color: var(--text-primary);
             line-height: 1.6;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+        
+        /* 夜晚模式样式 */
+        body.dark-mode {
+            background-color: var(--dark-background-color);
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 容器样式 */
+        body.dark-mode .container {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 标题样式 */
+        body.dark-mode h1 {
+            color: var(--dark-text-primary);
+        }
+        
+        body.dark-mode .description {
+            color: var(--dark-text-secondary);
+        }
+        
+        /* 夜晚模式 - 问卷模块样式 */
+        body.dark-mode .question-module {
+            background-color: var(--dark-card-background);
+            box-shadow: var(--dark-shadow-sm);
+        }
+        
+        /* 夜晚模式 - 问卷头部样式 */
+        body.dark-mode .question-header {
+            background-color: var(--dark-header-background);
+            border-bottom-color: var(--dark-border-color);
+        }
+        
+        /* 夜晚模式 - 题目标题样式 */
+        body.dark-mode .question-title {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 选项组标题样式 */
+        body.dark-mode .option-group-title {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 分类标签样式 */
+        body.dark-mode .category-tag.main {
+            color: var(--dark-text-secondary);
+            border-color: var(--dark-border-color);
+        }
+        
+        /* 夜晚模式 - 选项样式 */
+        body.dark-mode .option {
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .option:hover {
+            box-shadow: var(--dark-shadow-lg);
+        }
+        
+        /* 夜晚模式 - 选项头部样式 */
+        body.dark-mode .option-header {
+            background-color: var(--dark-header-background);
+        }
+        
+        /* 夜晚模式 - 自定义checkbox样式 */
+        body.dark-mode .option-header input[type="checkbox"] {
+            border-color: var(--dark-border-color);
+        }
+        
+        /* 夜晚模式 - 选项标签样式 */
+        body.dark-mode .option-header label {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 选项详情样式 */
+        body.dark-mode .option-details {
+            background-color: #2a2a2a;
+        }
+        
+        /* 夜晚模式 - 详情列表项样式 */
+        body.dark-mode .option-details li {
+            color: var(--dark-text-secondary);
+        }
+        
+        /* 夜晚模式 - 切换图标样式 */
+        body.dark-mode .toggle-icon {
+            color: var(--dark-text-tertiary);
+        }
+        
+        /* 夜晚模式 - 轮廓按钮样式 */
+        body.dark-mode .btn-outline {
+            background-color: var(--dark-card-background);
+            color: var(--dark-text-primary);
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .btn-outline:hover:not(:disabled) {
+            background-color: #2a2a2a;
+        }
+        
+        body.dark-mode .btn-outline:disabled {
+            background-color: var(--dark-background-color);
+            color: var(--dark-text-tertiary);
+            border-color: var(--dark-border-color);
+        }
+        
+        /* 夜晚模式 - 模态框样式 */
+        body.dark-mode .modal-content {
+            background-color: var(--dark-card-background);
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .modal-header h3 {
+            color: var(--dark-text-primary);
+        }
+        
+        body.dark-mode .close {
+            color: var(--dark-text-secondary);
+        }
+        
+        body.dark-mode .close:hover {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 大分类导航样式 */
+        body.dark-mode .category-nav-btn {
+            background-color: var(--dark-card-background);
+            color: var(--dark-text-primary);
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .category-nav-btn:hover {
+            background-color: #2a2a2a;
+        }
+        
+        /* 夜晚模式 - 题目按钮条样式 */
+        body.dark-mode .question-nav {
+            background-color: var(--dark-header-background);
+        }
+        
+        body.dark-mode .question-nav-btn {
+            background-color: var(--dark-card-background);
+            color: var(--dark-text-primary);
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .question-nav-btn:hover {
+            background-color: #2a2a2a;
+        }
+        
+        body.dark-mode .question-nav-btn.has-selection {
+            background-color: #1e3a2a;
+            color: #4CAF50;
+            border-color: var(--secondary-color);
+        }
+        
+        body.dark-mode .question-nav-separator {
+            background-color: var(--dark-border-color);
+        }
+        
+        /* 固定定位的导航按钮容器 */
+        .fixed-nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            background: var(--card-background);
+            padding: 10px 20px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+        }
+
+        /* 夜晚模式样式 */
+        body.dark-mode .fixed-nav-buttons {
+            background: var(--dark-card-background);
+            box-shadow: var(--dark-shadow-md);
+        }
+
+        /* 夜晚模式 - 结果文本样式 */
+        body.dark-mode .result-text {
+            background-color: var(--dark-header-background);
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 空结果样式 */
+        body.dark-mode .empty-result {
+            color: var(--dark-text-tertiary);
         }
         
         /* 容器样式 */
@@ -567,13 +770,6 @@
             display: block;
         }
         
-        /* 导航按钮容器 */
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: var(--spacing-lg);
-        }
-        
         /* 结果内容区域 */
         .result-content {
             margin-bottom: var(--spacing-xl);
@@ -641,8 +837,12 @@
                 <header class="question-header flex">
                     <h2 class="question-title small">根据需要选择：可以<span class="keyword">多选</span>，可以<span class="keyword">跳过</span></h2>
                     <div class="header-actions">
-                        <button class="nav-btn btn btn-outline" id="help-btn">说明</button>
                         <button class="nav-btn btn btn-outline" id="clear-options">清空选项</button>
+                        <button class="nav-btn btn btn-outline" id="theme-toggle">
+                            <span class="light-icon" style="display: none;">☀️ 白天</span>
+                            <span class="dark-icon">🌙 夜晚</span>
+                        </button>
+                        <button class="nav-btn btn btn-outline" id="help-btn">说明</button>
                         <button class="submit-btn btn btn-primary" id="global-submit">提交选择</button>
                     </div>
                 </header>
@@ -1030,6 +1230,34 @@
             ]
         }
     ];
+
+    // 主题切换功能
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const lightIcon = themeToggle.querySelector('.light-icon');
+        const darkIcon = themeToggle.querySelector('.dark-icon');
+        
+        // 默认设置为黑夜模式
+        document.body.classList.add('dark-mode');
+        lightIcon.style.display = 'none';
+        darkIcon.style.display = 'inline';
+        localStorage.setItem('theme', 'dark');
+        
+        // 切换主题
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                lightIcon.style.display = 'none';
+                darkIcon.style.display = 'inline';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                lightIcon.style.display = 'inline';
+                darkIcon.style.display = 'none';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    });
 
     // ================================================================
     // 【第四部分：购车类型】（id: 7）
@@ -6120,6 +6348,14 @@
 
                 pagesContainer.innerHTML = pageHTML;
                 this.initializePageEventListeners();
+                // 更新固定导航按钮状态
+                console.log('renderPage called with questionId:', questionId);
+                try {
+                    console.log('Calling updateFixedNavButtons...');
+                    CarQuestionnaireApp.updateFixedNavButtons(questionId);
+                } catch (error) {
+                    console.error('Error calling updateFixedNavButtons:', error);
+                }
             },
 
             generatePageHTML: function(questionId, question) {
@@ -6168,18 +6404,6 @@
                 });
 
                 pageHTML += `</div>`;
-
-                const currentCategory = mainCategories.find(cat => cat.questionIds.includes(questionId));
-                const currentIndex = currentCategory ? currentCategory.questionIds.indexOf(questionId) : -1;
-                const prevQuestionId = currentCategory && currentIndex > 0 ? currentCategory.questionIds[currentIndex - 1] : null;
-                const nextQuestionId = currentCategory && currentIndex < currentCategory.questionIds.length - 1 ? currentCategory.questionIds[currentIndex + 1] : null;
-                
-                pageHTML += `
-                    <div class="nav-buttons">
-                        <button class="nav-btn btn btn-outline" id="prev-btn-${questionId}" ${!prevQuestionId ? 'disabled' : ''}>上一页</button>
-                        <button class="nav-btn btn btn-outline" id="next-btn-${questionId}" ${!nextQuestionId ? 'disabled' : ''}>下一页</button>
-                    </div>
-                </div>`;
 
                 return pageHTML;
             },
@@ -6276,33 +6500,6 @@
                     });
                 });
 
-                const navBtns = document.querySelectorAll('.nav-buttons .nav-btn');
-                navBtns.forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const btnId = this.id;
-                        let currentQuestionId = 1;
-
-                        if (btnId.includes('prev-btn-')) {
-                            currentQuestionId = parseInt(btnId.split('-')[2]);
-                            const currentCategory = mainCategories.find(cat => cat.questionIds.includes(currentQuestionId));
-                            const currentIndex = currentCategory ? currentCategory.questionIds.indexOf(currentQuestionId) : -1;
-                            if (currentIndex > 0) {
-                                const prevQuestionId = currentCategory.questionIds[currentIndex - 1];
-                                CarQuestionnaireApp.render.renderQuestionNav(prevQuestionId);
-                                CarQuestionnaireApp.render.renderPage(prevQuestionId);
-                            }
-                        } else if (btnId.includes('next-btn-')) {
-                            currentQuestionId = parseInt(btnId.split('-')[2]);
-                            const currentCategory = mainCategories.find(cat => cat.questionIds.includes(currentQuestionId));
-                            const currentIndex = currentCategory ? currentCategory.questionIds.indexOf(currentQuestionId) : -1;
-                            if (currentCategory && currentIndex < currentCategory.questionIds.length - 1) {
-                                const nextQuestionId = currentCategory.questionIds[currentIndex + 1];
-                                CarQuestionnaireApp.render.renderQuestionNav(nextQuestionId);
-                                CarQuestionnaireApp.render.renderPage(nextQuestionId);
-                            }
-                        }
-                    });
-                });
             },
 
             generateResult: function() {
@@ -6349,17 +6546,67 @@
                 this.initializeQuestionEventListeners();
                 this.initializeResultEventListeners();
                 this.updatePageButtonStates();
+                this.initializeKeyboardNavigation();
             },
-
-            initializeQuestionEventListeners: function() {
-                const globalSubmit = document.getElementById('global-submit');
-                if (globalSubmit) {
-                    globalSubmit.addEventListener('click', function() {
-                        const validationResult = CarQuestionnaireApp.validation.validateSelections();
-
-                        if (validationResult.isValid) {
+            
+            // 初始化键盘导航
+            initializeKeyboardNavigation: function() {
+                document.addEventListener('keydown', function(event) {
+                    // 获取当前显示的问题ID
+                    const activePage = document.querySelector('.page.active');
+                    if (!activePage) return;
+                    
+                    const pageId = activePage.id;
+                    const currentQuestionId = parseInt(pageId.split('-')[1]);
+                    
+                    // 找到包含当前问题的分类
+                    let currentCategory = null;
+                    let currentCategoryIndex = -1;
+                    for (let i = 0; i < mainCategories.length; i++) {
+                        if (mainCategories[i].questionIds.includes(currentQuestionId)) {
+                            currentCategory = mainCategories[i];
+                            currentCategoryIndex = i;
+                            break;
+                        }
+                    }
+                    
+                    if (!currentCategory) return;
+                    
+                    const currentIndex = currentCategory.questionIds.indexOf(currentQuestionId);
+                    let prevQuestionId = currentIndex > 0 ? currentCategory.questionIds[currentIndex - 1] : null;
+                    let nextQuestionId = currentIndex < currentCategory.questionIds.length - 1 ? currentCategory.questionIds[currentIndex + 1] : null;
+                    
+                    // 如果当前类别没有下一个问题，检查是否存在下一个类别
+                    if (!nextQuestionId && currentCategoryIndex < mainCategories.length - 1) {
+                        const nextCategory = mainCategories[currentCategoryIndex + 1];
+                        if (nextCategory && nextCategory.questionIds.length > 0) {
+                            nextQuestionId = nextCategory.questionIds[0];
+                        }
+                    }
+                    
+                    // 如果当前类别没有上一个问题，检查是否存在上一个类别
+                    if (!prevQuestionId && currentCategoryIndex > 0) {
+                        const prevCategory = mainCategories[currentCategoryIndex - 1];
+                        if (prevCategory && prevCategory.questionIds.length > 0) {
+                            prevQuestionId = prevCategory.questionIds[prevCategory.questionIds.length - 1];
+                        }
+                    }
+                    
+                    // 检查是否是最后一道题
+                    const isLastQuestion = currentQuestionId === allQuestions[allQuestions.length - 1].id;
+                    
+                    // 处理键盘事件
+                    if (event.key === 'ArrowLeft') {
+                        // 左箭头键 - 上一页
+                        if (prevQuestionId) {
+                            CarQuestionnaireApp.render.renderQuestionNav(prevQuestionId);
+                            CarQuestionnaireApp.render.renderPage(prevQuestionId);
+                        }
+                    } else if (event.key === 'ArrowRight') {
+                        // 右箭头键 - 下一页或提交
+                        if (isLastQuestion) {
+                            // 最后一道题，执行提交
                             const selectedData = [];
-
                             CarQuestionnaireApp.data.questions.forEach(question => {
                                 question.options.forEach(option => {
                                     if (CarQuestionnaireApp.data.userSelections[option.id] === true) {
@@ -6370,14 +6617,51 @@
                                     }
                                 });
                             });
-
+                            
                             localStorage.setItem('selectedOptions', JSON.stringify(selectedData));
                             document.getElementById('question-module').style.display = 'none';
                             document.getElementById('result-module').style.display = 'block';
+                            // 隐藏固定导航按钮
+                            const fixedNav = document.getElementById('fixed-nav-buttons');
+                            if (fixedNav) {
+                                fixedNav.style.display = 'none';
+                            }
                             CarQuestionnaireApp.render.generateResult();
-                        } else {
-                            CarQuestionnaireApp.validation.showErrors(validationResult.errors);
+                        } else if (nextQuestionId) {
+                            // 不是最后一道题，执行下一页
+                            CarQuestionnaireApp.render.renderQuestionNav(nextQuestionId);
+                            CarQuestionnaireApp.render.renderPage(nextQuestionId);
                         }
+                    }
+                });
+            },
+
+            initializeQuestionEventListeners: function() {
+                const globalSubmit = document.getElementById('global-submit');
+                if (globalSubmit) {
+                    globalSubmit.addEventListener('click', function() {
+                        const selectedData = [];
+
+                        CarQuestionnaireApp.data.questions.forEach(question => {
+                            question.options.forEach(option => {
+                                if (CarQuestionnaireApp.data.userSelections[option.id] === true) {
+                                    selectedData.push({
+                                        questionTitle: question.title,
+                                        optionLabel: option.label
+                                    });
+                                }
+                            });
+                        });
+
+                        localStorage.setItem('selectedOptions', JSON.stringify(selectedData));
+                        document.getElementById('question-module').style.display = 'none';
+                        document.getElementById('result-module').style.display = 'block';
+                        // 隐藏固定导航按钮
+                        const fixedNav = document.getElementById('fixed-nav-buttons');
+                        if (fixedNav) {
+                            fixedNav.style.display = 'none';
+                        }
+                        CarQuestionnaireApp.render.generateResult();
                     });
                 }
 
@@ -6425,6 +6709,11 @@
                 backBtn.addEventListener('click', function() {
                     document.getElementById('question-module').style.display = 'block';
                     document.getElementById('result-module').style.display = 'none';
+                    // 显示固定导航按钮
+                    const fixedNav = document.getElementById('fixed-nav-buttons');
+                    if (fixedNav) {
+                        fixedNav.style.display = 'flex';
+                    }
                     CarQuestionnaireApp.events.updatePageButtonStates();
                 });
             },
@@ -6860,9 +7149,127 @@
             }
         },
 
+        // 创建固定导航按钮容器
+        createFixedNavButtons: function() {
+            // 检查是否已存在固定导航按钮容器
+            if (!document.getElementById('fixed-nav-buttons')) {
+                const container = document.createElement('div');
+                container.id = 'fixed-nav-buttons';
+                container.className = 'fixed-nav-buttons';
+                container.innerHTML = `
+                    <button class="nav-btn btn btn-outline" id="fixed-prev-btn" disabled>上一页</button>
+                    <button class="nav-btn btn btn-outline" id="fixed-next-btn" disabled>下一页</button>
+                `;
+                document.body.appendChild(container);
+            }
+        },
+
+        // 更新固定导航按钮状态
+        updateFixedNavButtons: function(currentQuestionId) {
+            console.log('updateFixedNavButtons called with currentQuestionId:', currentQuestionId);
+            // 确保currentQuestionId是数字
+            const questionIdNum = parseInt(currentQuestionId);
+            console.log('questionIdNum:', questionIdNum);
+            // 找到包含当前问题的分类
+            let currentCategory = null;
+            let currentCategoryIndex = -1;
+            for (let i = 0; i < mainCategories.length; i++) {
+                if (mainCategories[i].questionIds.includes(questionIdNum)) {
+                    currentCategory = mainCategories[i];
+                    currentCategoryIndex = i;
+                    break;
+                }
+            }
+            console.log('currentCategory:', currentCategory);
+            if (!currentCategory) return;
+
+            const currentIndex = currentCategory.questionIds.indexOf(questionIdNum);
+            console.log('currentIndex:', currentIndex);
+            let prevQuestionId = currentIndex > 0 ? currentCategory.questionIds[currentIndex - 1] : null;
+            let nextQuestionId = currentIndex < currentCategory.questionIds.length - 1 ? currentCategory.questionIds[currentIndex + 1] : null;
+            
+            // 如果当前类别没有下一个问题，检查是否存在下一个类别
+            if (!nextQuestionId && currentCategoryIndex < mainCategories.length - 1) {
+                const nextCategory = mainCategories[currentCategoryIndex + 1];
+                if (nextCategory && nextCategory.questionIds.length > 0) {
+                    nextQuestionId = nextCategory.questionIds[0];
+                }
+            }
+            
+            // 如果当前类别没有上一个问题，检查是否存在上一个类别
+            if (!prevQuestionId && currentCategoryIndex > 0) {
+                const prevCategory = mainCategories[currentCategoryIndex - 1];
+                if (prevCategory && prevCategory.questionIds.length > 0) {
+                    prevQuestionId = prevCategory.questionIds[prevCategory.questionIds.length - 1];
+                }
+            }
+            
+            console.log('prevQuestionId:', prevQuestionId);
+            console.log('nextQuestionId:', nextQuestionId);
+
+            const prevBtn = document.getElementById('fixed-prev-btn');
+            const nextBtn = document.getElementById('fixed-next-btn');
+            console.log('prevBtn:', prevBtn);
+            console.log('nextBtn:', nextBtn);
+
+            if (prevBtn) {
+                prevBtn.disabled = !prevQuestionId;
+                prevBtn.onclick = prevBtn.disabled ? null : function() {
+                    if (prevQuestionId) {
+                        CarQuestionnaireApp.render.renderQuestionNav(prevQuestionId);
+                        CarQuestionnaireApp.render.renderPage(prevQuestionId);
+                    }
+                };
+            }
+
+            // 检查是否是最后一道题
+            const isLastQuestion = questionIdNum === allQuestions[allQuestions.length - 1].id;
+            
+            if (nextBtn) {
+                if (isLastQuestion) {
+                    // 最后一道题，显示为"提交选择"
+                    nextBtn.textContent = '提交选择';
+                    nextBtn.disabled = false;
+                    nextBtn.onclick = function() {
+                        // 执行与顶部提交选择按钮相同的功能
+                        const selectedData = [];
+                        CarQuestionnaireApp.data.questions.forEach(question => {
+                            question.options.forEach(option => {
+                                if (CarQuestionnaireApp.data.userSelections[option.id] === true) {
+                                    selectedData.push({
+                                        questionTitle: question.title,
+                                        optionLabel: option.label
+                                    });
+                                }
+                            });
+                        });
+
+                        localStorage.setItem('selectedOptions', JSON.stringify(selectedData));
+                        document.getElementById('question-module').style.display = 'none';
+                        document.getElementById('result-module').style.display = 'block';
+                        CarQuestionnaireApp.render.generateResult();
+                    };
+                } else {
+                    // 不是最后一道题，显示为"下一页"
+                    nextBtn.textContent = '下一页';
+                    nextBtn.disabled = !nextQuestionId;
+                    nextBtn.onclick = nextBtn.disabled ? null : function() {
+                        if (nextQuestionId) {
+                            CarQuestionnaireApp.render.renderQuestionNav(nextQuestionId);
+                            CarQuestionnaireApp.render.renderPage(nextQuestionId);
+                        }
+                    };
+                }
+            }
+        },
+
         init: function() {
-            CarQuestionnaireApp.render.generateQuestionnaire();
-            CarQuestionnaireApp.events.initializeAll();
+            CarQuestionnaireApp.createFixedNavButtons();
+            // 确保DOM已经完全更新
+            setTimeout(function() {
+                CarQuestionnaireApp.render.generateQuestionnaire();
+                CarQuestionnaireApp.events.initializeAll();
+            }, 0);
         }
     };
 
@@ -6907,6 +7314,9 @@
                 <p>1️⃣本程序会根据您的选择生成专属提示词。</p>
                 <p>2️⃣您可将提示词复制到任意AI工具中，即可获取最新结果。</p>
                 <p>3️⃣由于提示词会引导AI生成内容，程序本身无需频繁更新即可保持结果的时效性。</p>
+                <p>4️⃣键盘方向键，⬅是上一页，➡是下一页</p>
+                <p>·</p>
+                <p>不感兴趣的问题🌟可以直接跳过🌟</p>
             </div>
         </div>
     </div>
