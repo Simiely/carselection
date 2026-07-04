@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汽车选购 - 辅助筛选</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>汽车选购🔍辅助筛选</h1>
+        <p class="description">日期：2026年4月28日</p>
+        
+        <main>
+            <!-- 问卷模块 -->
+            <section class="question-module" id="question-module">
+                <header class="question-header flex">
+                    <h2 class="question-title small">根据需要选择：可以<span class="keyword">多选</span>，可以<span class="keyword">跳过</span></h2>
+                    <div class="header-actions">
+                        <button class="nav-btn btn btn-outline" id="clear-options">清空选项</button>
+                        <button class="nav-btn btn btn-outline" id="theme-toggle">
+                            <span class="light-icon" style="display: none;">☀️ 白天</span>
+                            <span class="dark-icon">🌙 夜晚</span>
+                        </button>
+                        <button class="nav-btn btn btn-outline" id="help-btn">说明</button>
+                        <button class="submit-btn btn btn-primary" id="global-submit">提交选择</button>
+                    </div>
+                </header>
+                <div class="question-content">
+                    <nav class="category-nav" id="category-nav"></nav>
+                    <nav class="question-nav" id="question-nav"></nav>
+                    <div id="pages-container"></div>
+                </div>
+            </section>
+            
+            <!-- 结果显示区域 -->
+            <section class="question-module" id="result-module">
+                <header class="question-header">
+                    <h2 class="question-title">您的选择</h2>
+                </header>
+                <div class="question-content">
+                    <div class="result-content">
+                        <div id="result-text" class="result-text"></div>
+                        <button id="copy-btn" class="copy-btn btn btn-primary">复制结果</button>
+                    </div>
+                    <button class="back-btn btn btn-primary" id="back-btn">返回修改</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 说明模态框 -->
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>使用说明</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>1️⃣本程序会根据您的选择生成专属提示词。</p>
+                <p>2️⃣您可将提示词复制到任意AI工具中，即可获取最新结果。</p>
+                <p>3️⃣由于提示词会引导AI生成内容，程序本身无需频繁更新即可保持结果的时效性。</p>
+                <p>4️⃣键盘方向键，⬅是上一页，➡是下一页</p>
+                <p>·</p>
+                <p>不感兴趣的问题🌟可以直接跳过🌟</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 数据文件（合并为单个 parts.js，亦可在 js/data/parts/ 下找到 26 个独立分区文件） -->
+    <script src="js/data/parts.js"></script>
+
+    <!-- 分类映射与数据合并 -->
+    <script src="js/data/categories.js"></script>
+
+    <!-- 应用核心逻辑 -->
+    <script src="js/app/main.js"></script>
+</body>
+</html>

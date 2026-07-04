@@ -1,0 +1,818 @@
+/* 根变量定义 - 用于统一管理样式 */
+        :root {
+            /* 颜色变量 */
+            --primary-color: #FB7299;          /* 主色调 - 粉色 */
+            --primary-hover: #e65c85;          /* 主色调 hover 效果 */
+            --secondary-color: #4CAF50;        /* 辅助色 - 绿色 */
+            --secondary-hover: #43a047;        /* 辅助色 hover 效果 */
+            --background-color: #e8e8eb;       /* 背景色 */
+            --card-background: #ffffff;         /* 卡片背景色 */
+            --header-background: #f8f8fa;       /* 头部背景色 */
+            --text-primary: #1d1d1f;           /* 主要文本颜色 */
+            --text-secondary: #424245;         /* 次要文本颜色 */
+            --text-tertiary: #86868b;          /*  tertiary 文本颜色 */
+            --border-color: #e8e8ed;           /* 边框颜色 */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);    /* 小阴影 */
+            --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);    /* 中阴影 */
+            --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.08);   /* 大阴影 */
+            
+            /* 夜晚模式变量 */
+            --dark-background-color: #121212;      /* 夜晚背景色 */
+            --dark-card-background: #1e1e1e;       /* 夜晚卡片背景色 */
+            --dark-header-background: #252525;     /* 夜晚头部背景色 */
+            --dark-text-primary: #ffffff;          /* 夜晚主要文本颜色 */
+            --dark-text-secondary: #b0b0b0;        /* 夜晚次要文本颜色 */
+            --dark-text-tertiary: #707070;         /* 夜晚 tertiary 文本颜色 */
+            --dark-border-color: #333333;          /* 夜晚边框颜色 */
+            --dark-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);    /* 夜晚小阴影 */
+            --dark-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.3);    /* 夜晚中阴影 */
+            --dark-shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.2);   /* 夜晚大阴影 */
+            
+            /* 间距变量 */
+            --spacing-xs: 4px;                 /* 极小间距 */
+            --spacing-sm: 8px;                 /* 小间距 */
+            --spacing-md: 16px;                /* 中等间距 */
+            --spacing-lg: 24px;                /* 大间距 */
+            --spacing-xl: 32px;                /* 超大间距 */
+            --spacing-xxl: 40px;               /* 特大间距 */
+            
+            /* 边框半径 */
+            --border-radius-sm: 4px;           /* 小圆角 */
+            --border-radius-md: 6px;           /* 中等圆角 */
+            --border-radius-lg: 8px;           /* 大圆角 */
+            --border-radius-xl: 12px;          /* 超大圆角 */
+            
+            /* 字体大小 */
+            --font-size-xs: 12px;              /* 极小字体 */
+            --font-size-sm: 13px;              /* 小字体 */
+            --font-size-md: 14px;              /* 中等字体 */
+            --font-size-lg: 16px;              /* 大字体 */
+            --font-size-xl: 18px;              /* 超大字体 */
+            --font-size-xxl: 20px;             /* 特大字体 */
+            --font-size-xxxl: 24px;            /* 极大字体 */
+            --font-size-heading: 32px;          /* 标题字体 */
+            
+            /* 过渡效果 */
+            --transition-fast: 0.2s ease;      /* 快速过渡 */
+            --transition-normal: 0.3s ease;     /* 正常过渡 */
+            --transition-slow: 0.6s ease;       /* 慢速过渡 */
+        }
+        
+        /* 全局重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* 基础样式 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+        }
+        
+        /* 夜晚模式样式 */
+        body.dark-mode {
+            background-color: var(--dark-background-color);
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 容器样式 */
+        body.dark-mode .container {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 标题样式 */
+        body.dark-mode h1 {
+            color: var(--dark-text-primary);
+        }
+        
+        body.dark-mode .description {
+            color: var(--dark-text-secondary);
+        }
+        
+        /* 夜晚模式 - 问卷模块样式 */
+        body.dark-mode .question-module {
+            background-color: var(--dark-card-background);
+            box-shadow: var(--dark-shadow-sm);
+        }
+        
+        /* 夜晚模式 - 问卷头部样式 */
+        body.dark-mode .question-header {
+            background-color: var(--dark-header-background);
+            border-bottom-color: var(--dark-border-color);
+        }
+        
+        /* 夜晚模式 - 题目标题样式 */
+        body.dark-mode .question-title {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 选项组标题样式 */
+        body.dark-mode .option-group-title {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 分类标签样式 */
+        body.dark-mode .category-tag.main {
+            color: var(--dark-text-secondary);
+            border-color: var(--dark-border-color);
+        }
+        
+        /* 夜晚模式 - 选项样式 */
+        body.dark-mode .option {
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .option:hover {
+            box-shadow: var(--dark-shadow-lg);
+        }
+        
+        /* 夜晚模式 - 选项头部样式 */
+        body.dark-mode .option-header {
+            background-color: var(--dark-header-background);
+        }
+        
+        /* 夜晚模式 - 自定义checkbox样式 */
+        body.dark-mode .option-header input[type="checkbox"] {
+            border-color: var(--dark-border-color);
+        }
+        
+        /* 夜晚模式 - 选项标签样式 */
+        body.dark-mode .option-header label {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 选项详情样式 */
+        body.dark-mode .option-details {
+            background-color: #2a2a2a;
+        }
+        
+        /* 夜晚模式 - 详情列表项样式 */
+        body.dark-mode .option-details li {
+            color: var(--dark-text-secondary);
+        }
+        
+        /* 夜晚模式 - 切换图标样式 */
+        body.dark-mode .toggle-icon {
+            color: var(--dark-text-tertiary);
+        }
+        
+        /* 夜晚模式 - 轮廓按钮样式 */
+        body.dark-mode .btn-outline {
+            background-color: var(--dark-card-background);
+            color: var(--dark-text-primary);
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .btn-outline:hover:not(:disabled) {
+            background-color: #2a2a2a;
+        }
+        
+        body.dark-mode .btn-outline:disabled {
+            background-color: var(--dark-background-color);
+            color: var(--dark-text-tertiary);
+            border-color: var(--dark-border-color);
+        }
+        
+        /* 夜晚模式 - 模态框样式 */
+        body.dark-mode .modal-content {
+            background-color: var(--dark-card-background);
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .modal-header h3 {
+            color: var(--dark-text-primary);
+        }
+        
+        body.dark-mode .close {
+            color: var(--dark-text-secondary);
+        }
+        
+        body.dark-mode .close:hover {
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 大分类导航样式 */
+        body.dark-mode .category-nav-btn {
+            background-color: var(--dark-card-background);
+            color: var(--dark-text-primary);
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .category-nav-btn:hover {
+            background-color: #2a2a2a;
+        }
+        
+        /* 夜晚模式 - 题目按钮条样式 */
+        body.dark-mode .question-nav {
+            background-color: var(--dark-header-background);
+        }
+        
+        body.dark-mode .question-nav-btn {
+            background-color: var(--dark-card-background);
+            color: var(--dark-text-primary);
+            border-color: var(--dark-border-color);
+        }
+        
+        body.dark-mode .question-nav-btn:hover {
+            background-color: #2a2a2a;
+        }
+        
+        body.dark-mode .question-nav-btn.has-selection {
+            background-color: #1e3a2a;
+            color: #4CAF50;
+            border-color: var(--secondary-color);
+        }
+        
+        body.dark-mode .question-nav-separator {
+            background-color: var(--dark-border-color);
+        }
+        
+        /* 固定定位的导航按钮容器 */
+        .fixed-nav-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            background: var(--card-background);
+            padding: 10px 20px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+        }
+
+        /* 夜晚模式样式 */
+        body.dark-mode .fixed-nav-buttons {
+            background: var(--dark-card-background);
+            box-shadow: var(--dark-shadow-md);
+        }
+
+        /* 夜晚模式 - 结果文本样式 */
+        body.dark-mode .result-text {
+            background-color: var(--dark-header-background);
+            color: var(--dark-text-primary);
+        }
+        
+        /* 夜晚模式 - 空结果样式 */
+        body.dark-mode .empty-result {
+            color: var(--dark-text-tertiary);
+        }
+        
+        /* 容器样式 */
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: var(--spacing-xxl) var(--spacing-md);
+        }
+        
+        /* 标题样式 */
+        h1 {
+            text-align: center;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+            font-size: var(--font-size-heading);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        .description {
+            text-align: center;
+            color: var(--text-secondary);
+            margin: var(--spacing-sm) 0 var(--spacing-xs) 0;
+            font-size: var(--font-size-sm);
+            line-height: 1.5;
+        }
+        
+        /* 问卷模块样式 */
+        .question-module {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: var(--spacing-xxl);
+            overflow: hidden;
+        }
+        
+        /* 问卷头部样式 */
+        .question-header {
+            background-color: var(--header-background);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        /* 头部弹性布局 */
+        .question-header.flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* 题目标题样式 */
+        .question-title {
+            font-size: var(--font-size-xxxl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        /* 小标题样式 */
+        .question-title.small {
+            font-size: var(--font-size-xxl);
+        }
+        
+        /* 头部操作按钮容器 */
+        .header-actions {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+        
+        /* 头部操作按钮样式 */
+        .header-actions .btn {
+            width: auto;
+            margin: 0;
+            padding: var(--spacing-sm) var(--spacing-md);
+            font-size: var(--font-size-md);
+            font-weight: 500;
+        }
+        
+        /* 结果模块默认隐藏 */
+        #result-module {
+            display: none;
+        }
+        
+        /* 问卷内容区域 */
+        .question-content {
+            padding: var(--spacing-xl);
+        }
+        
+        /* 选项组样式 */
+        .option-group {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        /* 选项组标题样式 */
+        .option-group-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+
+        .category-tags {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .category-tag {
+            font-size: var(--font-size-xs);
+            padding: 2px 8px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .category-tag.main {
+            background-color: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .category-tag.sub {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* 选项样式 */
+        .option {
+            margin-bottom: var(--spacing-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+        
+        /* 选项hover效果 */
+        .option:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        /* 选项头部样式 */
+        .option-header {
+            padding: var(--spacing-md) var(--spacing-lg);
+            background-color: var(--header-background);
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        /* 选项复选框样式 */
+        .option-header input[type="checkbox"] {
+            margin-right: var(--spacing-md);
+            transform: scale(1.2);
+        }
+        
+        /* 自定义checkbox样式 */
+        .option-header input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        /* 选中状态样式 */
+        .option-header input[type="checkbox"]:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        /* 选中状态的对勾样式 */
+        .option-header input[type="checkbox"]:checked::after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 6px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        
+        /* 选项标签样式 */
+        .option-header label {
+            font-weight: 500;
+            cursor: pointer;
+            flex: 1;
+            font-size: var(--font-size-lg);
+        }
+        
+        /* 选项详情样式 */
+        .option-details {
+            padding: 0 var(--spacing-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-slow), padding var(--transition-slow);
+            background-color: #fcfcfc;
+        }
+        
+        /* 选项详情展开状态 */
+        .option-details.active {
+            max-height: 500px;
+            padding: var(--spacing-lg);
+            transition: max-height var(--transition-normal), padding var(--transition-normal);
+        }
+        
+        /* 详情列表样式 */
+        .option-details ul {
+            list-style-type: none;
+            margin-left: var(--spacing-lg);
+        }
+        
+        /* 详情列表项样式 */
+        .option-details li {
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            font-size: var(--font-size-md);
+            color: var(--text-secondary);
+        }
+        
+        /* 关键词样式 */
+        .keyword {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        /* 列表项前的点样式 */
+        .option-details li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+        
+        /* 切换图标样式 */
+        .toggle-icon {
+            font-size: var(--font-size-md);
+            transition: transform var(--transition-normal);
+            color: #6e6e73;
+        }
+        
+        /* 切换图标激活状态 */
+        .toggle-icon.active {
+            transform: rotate(180deg);
+        }
+        
+        /* 通用按钮样式 */
+        .btn {
+            border: none;
+            border-radius: var(--border-radius-lg);
+            cursor: pointer;
+            transition: background-color var(--transition-normal);
+            font-weight: 500;
+        }
+        
+        /* 主要按钮样式 */
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* 主要按钮hover效果 */
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        /* 次要按钮样式 */
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        /* 次要按钮hover效果 */
+        .btn-secondary:hover {
+            background-color: var(--secondary-hover);
+        }
+        
+        /* 轮廓按钮样式 */
+        .btn-outline {
+            background-color: var(--card-background);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-normal);
+        }
+        
+        /* 轮廓按钮hover效果 */
+        .btn-outline:hover:not(:disabled) {
+            background-color: var(--background-color);
+            border-color: var(--primary-color);
+        }
+        
+        /* 禁用状态按钮 */
+        .btn-outline:disabled {
+            background-color: var(--background-color);
+            color: var(--text-tertiary);
+            border-color: var(--border-color);
+            cursor: not-allowed;
+        }
+        
+        /* 提交按钮样式 */
+        .submit-btn {
+            display: block;
+            width: 200px;
+            margin: var(--spacing-lg) auto;
+            padding: 12px;
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+        }
+        
+        /* 复制按钮样式 */
+        .copy-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: var(--font-size-md);
+        }
+        
+        /* 复制成功状态 */
+        .copy-btn.copied {
+            background-color: var(--secondary-color);
+        }
+        
+        /* 模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .modal-content {
+            background-color: var(--card-background);
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            width: 80%;
+            max-width: 500px;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            color: var(--text-primary);
+        }
+        
+        .close {
+            color: var(--text-secondary);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: var(--text-primary);
+        }
+        
+        .modal-body p {
+            margin: var(--spacing-xs) 0;
+            line-height: 1.5;
+        }
+        
+        /* 响应式设计 */
+        .back-btn {
+            display: block;
+            width: 200px;
+            margin: var(--spacing-lg) auto;
+            padding: 12px;
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        /* 导航按钮样式 */
+        .nav-btn {
+            padding: 10px 20px;
+        }
+        
+        /* 大分类导航样式 */
+        .category-nav {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .category-nav-btn {
+            padding: var(--spacing-xs) var(--spacing-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            background-color: var(--card-background);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+        }
+
+        .category-nav-btn:hover {
+            border-color: var(--primary-color);
+            background-color: var(--background-color);
+        }
+
+        .category-nav-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* 题目按钮条样式 */
+        .question-nav {
+            display: flex;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background-color: var(--header-background);
+            border-radius: var(--border-radius-md);
+        }
+
+        .question-nav-btn {
+            min-width: 32px;
+            height: 32px;
+            padding: 0 var(--spacing-sm);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background-color: var(--card-background);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .question-nav-btn:hover {
+            border-color: var(--primary-color);
+            background-color: var(--background-color);
+        }
+
+        .question-nav-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .question-nav-btn.has-selection {
+            background-color: #E8F5E9;
+            color: #2E7D32;
+            border-color: var(--secondary-color);
+        }
+
+        .question-nav-btn.has-selection.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        /* 题目按钮分隔线 */
+        .question-nav-separator {
+            width: 1px;
+            height: 32px;
+            background-color: var(--border-color);
+            margin: 0 var(--spacing-xs);
+        }
+        
+        /* 页面样式 */
+        .page {
+            display: none;
+        }
+        
+        /* 激活页面 */
+        .page.active {
+            display: block;
+        }
+        
+        /* 结果内容区域 */
+        .result-content {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        /* 结果文本样式 */
+        .result-text {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            background-color: var(--header-background);
+            border-radius: var(--border-radius-lg);
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        
+        /* 空结果样式 */
+        .empty-result {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-tertiary);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+            
+            h1 {
+                font-size: var(--font-size-xxxl);
+                margin-bottom: var(--spacing-xs);
+            }
+            
+            .question-module {
+                border-radius: var(--border-radius-lg);
+            }
+            
+            .question-title {
+                font-size: var(--font-size-xxl);
+            }
+            
+            .option-header {
+                padding: var(--spacing-sm) var(--spacing-md);
+            }
+            
+            .option-details.active {
+                padding: var(--spacing-md);
+            }
+            
+            .option-group-title {
+                font-size: var(--font-size-md);
+            }
+        }
